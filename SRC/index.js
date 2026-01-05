@@ -7,14 +7,22 @@ function searchCity(city) {
 
 function displayWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.city;
+  document.querySelector("#description").innerHTML =
+    response.data.condition.description;
   document.querySelector(".current-temperature-value").innerHTML = Math.round(
     response.data.temperature.current
+  );
+
+  document.querySelector("#humidity").innerHTML =
+    response.data.temperature.humidity;
+  document.querySelector("#wind-speed").innerHTML = Math.round(
+    response.data.wind.speed
   );
 }
 
 function search(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input").value;
+  let city = document.querySelector("#search-input").value;
   searchCity(city);
 }
 
@@ -46,3 +54,4 @@ function formatDate(date) {
 }
 
 document.querySelector("#current-date").innerHTML = formatDate(new Date());
+searchCity("New York");
