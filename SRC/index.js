@@ -16,8 +16,13 @@ function displayWeather(response) {
     response.data.temperature.current
   );
 
-  document.querySelector(".current-temperature-icon").innerHTML =
-    getDayNightEmoji(response.data.time);
+  document.querySelector("#icon").innerHTML = `
+  <img
+  src="${response.data.condition.icon_url}"
+  alt="${response.data.condition.description}"
+  class="weather-app-icon" 
+  /> 
+  `;
 
   document.querySelector("#humidity").innerHTML =
     response.data.temperature.humidity;
@@ -42,7 +47,7 @@ function displayForecast(response) {
   const data = response.data.daily;
   let forecastHTML = "";
 
-  data.slice(1, 7).forEach((day) => {
+  data.slice(1, 6).forEach((day) => {
     forecastHTML += `
       <div class="current-forecast-day">
         <div class="current-forecast-date">${formatDay(day.time)}</div>
@@ -93,17 +98,6 @@ function formatDay(unixTime) {
   const date = new Date(unixTime * 1000);
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return days[date.getDay()];
-}
-
-function getDayNightEmoji(unixTime) {
-  const date = new Date(unixTime * 1000);
-  const hours = date.getHours();
-
-  if (hours >= 6 && hours < 18) {
-    return "☀️"; // Daytime emoji
-  } else {
-    return "🌙"; // Nighttime emoji
-  }
 }
 
 function handleError(error) {
