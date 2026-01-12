@@ -19,31 +19,36 @@
     <header>
       <form id="search-form">
         <input type="search" id="search-input" class="search-input" placeholder="Enter city" required />
-        <input type="submit" Value="search" class="search-button" />
+        <input type="submit" value="Search" class="search-button" />
       </form>
-
-      <h1 class="current-city" id="current-city">Paris</h1>
     </header>
+
     <main>
       <div class="current-weather">
         <div>
+          <h1 class="current-city" id="current-city">Paris</h1>
 
           <p class="current-details">
-            <span id="current-date"></span>, <span id="description"></span> <br />
-            Humidity: <strong><span id="humidity"></span>%</strong>, Wind:
+            <span id="current-date"></span>,
+            <span id="description"></span>
+            <br />
+            Humidity:
+            <strong><span id="humidity"></span>%</strong>,
+            Wind:
             <strong><span id="wind-speed"></span> km/h</strong>
           </p>
         </div>
         <div class="current-temperature">
-          <span class="current-temperature-icon">☀️</span><span class="current-temperature-value">24</span><span
-            class="current-temperature-unit">°C</span>
+          <span class="current-temperature-icon">☀️</span>
+          <span class="current-temperature-value">--</span><span class="current-temperature-unit">°C</span>
         </div>
       </div>
+      <div id="forecast" class="current-forecast"></div>
     </main>
     <footer>
       <p>
         This project was coded by
-        <a href="https://github.com/stabilenr" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/stabilenr/" target="_blank" rel="noopener noreferrer">
           Narjis Stabile
         </a>
         and is
@@ -61,7 +66,5 @@
   </div>
   <script src="src/index.js"></script>
 </body>
-
-
 
 </html>

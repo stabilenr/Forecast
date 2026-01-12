@@ -37,7 +37,7 @@ header {
   background-color: #885df1;
   border: none;
   color: white;
-  padding: 20px;
+  padding: 20px 35px;
   line-height: 1;
   border-radius: 5px;
 }
@@ -88,12 +88,42 @@ main {
   position: relative;
   top: -38px;
 }
+.current-forecast {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
 
+.current-forecast-date {
+  text-align: center;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.current-forecast-icon {
+  width: 42px;
+  display: block;
+  margin: 0 auto;
+}
+
+.current-forecast-temperatures {
+  text-align: center;
+  color: #f65282;
+  margin-top: 10px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.current-forecast-temperature {
+  padding: 0 10px;
+}
 footer {
   border-top: 1px solid #f9f7fe;
   text-align: center;
   padding-top: 15px;
-
   color: rgba(39, 33, 66, 0.4);
 }
 
